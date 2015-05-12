@@ -1,0 +1,23 @@
+doctype html
+html( ng-app='app' )
+  head
+    title Side Bodler Demo
+    script( src='../../public/components/angular/angular.js' )
+    script( src='../../build/js/ng-side-bodler.js' )
+    script( src='./demo.js' )
+    link( rel="stylesheet" type='text/css' href='./demo.css' )
+    link( rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css" )
+  body
+    nav( ng-side-bodler )
+      a( href="#" ng-side-bodler-toggle ng-click='bodler.toggle()' )
+        i.fa.fa-angle-left
+      ul
+        li
+          a.new( href="#" ng-side-bodler-button )
+            i.fa.fa-plus
+        li
+          a.delete( href="#" ng-side-bodler-button )
+            i.fa.fa-trash
+        li
+          a.list( href="#" ng-side-bodler-button )
+            i.fa.fa-list

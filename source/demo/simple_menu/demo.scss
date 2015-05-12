@@ -1,0 +1,73 @@
+$buttonSize: 50px;
+$buttonPadding:10px;
+
+
+html {
+  box-sizing: border-box;
+}
+*, *:before, *:after {
+  box-sizing: inherit;
+}
+
+body {
+  font-family:sans-serif;
+  font-size: 100%;
+}
+
+nav[ng-side-bodler] {
+  overflow: hidden;
+  [ng-side-bodler-toggle] {
+    transition:1s cubic-bezier(.47,-0.19,.44,1.44);
+  }
+  [ng-side-bodler-button] {
+    transform: translate(100px, 0);
+    transition:0.5s cubic-bezier(.47,-0.19,.44,1.44);
+  }
+  &.ng-side-bodler-open {
+    [ng-side-bodler-toggle] {
+      transform: rotate(180deg);
+    }
+    [ng-side-bodler-button] {
+      transform: translate(0, 0);
+    }
+  }
+  ul li:nth-child(1) [ng-side-bodler-button] {
+    transition-delay: 0s;
+  }
+  ul li:nth-child(2) [ng-side-bodler-button] {
+    transition-delay: 0.2s;
+  }
+  ul li:nth-child(3) [ng-side-bodler-button] {
+    transition-delay: 0.4s;
+  }
+  position:absolute;
+  right:0;
+  padding-right:10px;
+  a {
+    display:block;
+    width:$buttonSize;
+    height:$buttonSize;
+    padding:$buttonPadding;
+    font-size:$buttonSize - $buttonPadding - 10px;
+    line-height:$buttonSize - $buttonPadding - 12px;
+    text-align:center;
+    border-radius:$buttonSize;
+    background:#333;
+    color:#fff;
+    margin:10px;
+    &.new {
+      background:#0f0;
+    }
+    &.delete {
+      background:#f00;
+    }
+    &.list {
+      background:#55f;
+    }
+  }
+  ul, li {
+    margin:0;
+    padding:0;
+    list-style:none;
+  }
+}
